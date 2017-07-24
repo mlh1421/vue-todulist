@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src=vue.js></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="inner">
+            输入内容
+        </div>
+    </div>
+    <div id="app">
+        <input type="text" @keyup.enter='greet' v-model='title'>
+            <a href="#all">所有任务</a>
+            <a href="#unfinished">未完成的任务</a>
+            <a href="#finished">完成的任务</a>
+        <div class="task-list">
+            <span v-show='!list.length'>还没有添加内容</span>
+            <ul>
+                <li v-for='item in filteredList' :class="{completed:item.isChecked,editing:todoing==item}">
+                    <div class="view">
+                        <input type="checkbox" v-model='item.isChecked'>
+                        <div v-show='todoing!=item' @dblclick='edit(item)'> {{item.title}}</div>
+                        <button @click='deleteTodo(item)'>-</button>
+                    </div>
+                    <input type="text" class='aa' v-model='item.title' @blur='edited' v-focus='todoing==item'>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.header{
+height: 30px;
+background: lightpink;
+}
+.header .inner{
+    width: 600px;
+    margin: 0 auto;
+    color: white;
+    line-height: 30px;
+}
+#app{
+    margin: 0 auto;
+    width: 600px;
+    /* border: 1px solid red; */
+}
+
+.task-list ul li{
+     /* border: 1px solid red;  */
+    height: 20px;
+    position: relative;
+    margin:10px 0;
+}
+.task-list ul li input{
+    width: 20px;
+    left:0;
+    height: 20px;
+}
+.task-list ul li div{
+    position: absolute;
+    top:0;
+    height: 20px;
+}
+
+.task-list ul li button{
+    right: 0;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    width: 20px;
+    color: #fff;
+    border:none;
+    background: silver;
+}
+li{
+    list-style: none;
+}
+
+.completed .view div{
+    text-decoration: line-through;
+    color: #eee;
+
+}
+.view{
+    width: 600px;
+    /* border: 1px solid blue; */
+}
+.view div{
+    left: 20px;
+}
+.aa{
+    display: none;
+}
+.editing input.aa{
+    display: block;
+    position: absolute;
+    left: 20px;
+    top:0;
+    width: 450px;
+    height: 20px;
+}
